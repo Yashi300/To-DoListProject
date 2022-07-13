@@ -3,7 +3,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const port = process.env.port || 8000;
 const _=require("lodash")
 
 const app = express();
@@ -132,6 +131,11 @@ app.post("/delete", function(req,res){
 app.get("/about", function (req, res) {
   res.render("about");
 });
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
 app.listen(port, function () {
   console.log(`listning to the port no at ${port}`);
