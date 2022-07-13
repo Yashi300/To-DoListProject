@@ -138,5 +138,5 @@ if (port == null || port == "") {
 }
 
 app.listen(port, function () {
-  console.log(`listning to the port no at ${port}`);
+  console.log("Server started successfully");
 });
